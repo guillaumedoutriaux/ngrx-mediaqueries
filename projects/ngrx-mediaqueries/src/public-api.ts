@@ -1,7 +1,3 @@
-/*
- * Public API Surface of ngrx-mediaqueries
- */
-
-export * from './lib/ngrx-mediaqueries.service';
-export * from './lib/ngrx-mediaqueries.component';
-export * from './lib/ngrx-mediaqueries.module';
+export * from "./lib/+store";
+export * from "./lib/services";
+export * from "./lib/ngrx-mediaqueries.module";
