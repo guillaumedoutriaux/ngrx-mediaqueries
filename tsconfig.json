@@ -17,7 +17,15 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ngrx-mediaqueries": [
+        "dist/ngrx-mediaqueries"
+      ],
+      "ngrx-mediaqueries/*": [
+        "dist/ngrx-mediaqueries/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
