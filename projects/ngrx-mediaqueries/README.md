@@ -2,6 +2,7 @@
 
 A lib for Angular that binds media-queries and @ngrx/store together.
 The idea behind the creation of the library cames from a talk of Michael Madsen at Rxjs Live called "Reactive Responsive Design" ([Source](https://youtu.be/GKPX0ZAaSCI)).
+
 Possible uses cases are :
 
 - display / hide a component or enable a functionnality according to a specific media query
@@ -12,6 +13,7 @@ By default, the following
 ## Installation
 
 Npm : `npm i @yoozly/ngrx-mediaqueries`
+
 Yarn : `yarn add @yoozly/ngrx-mediaqueries`
 
 ## Setup - Root Module
