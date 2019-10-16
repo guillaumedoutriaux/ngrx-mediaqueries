@@ -1,6 +1,6 @@
 {
   "name": "@yoozly/ngrx-mediaqueries",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "author": "Guillaume Doutriaux",
   "description": "Angular Lib that binds CSS media queries and @ngrx/store together.",
   "homepage": "https://github.com/guillaumedoutriaux/ngrx-mediaqueries",
@@ -15,7 +15,7 @@
   "peerDependencies": {
     "@angular/core": "~7.2.0",
     "@angular/forms": "~7.2.0",
-    "@ngrx/store": "^8.1.0",
+    "@ngrx/store": "^8.4.0",
     "rxjs": "~6.3.3"
   }
 }
