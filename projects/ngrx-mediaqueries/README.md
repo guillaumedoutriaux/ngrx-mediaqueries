@@ -150,7 +150,7 @@ import {
 A set of selectors is provided by default. In order to use it, use the `NgrxMediaQueriesFacade` service, like that :
 
 ```javascript
-import { NgrxMediaQueriesFacade } from "ngrx-mediaqueries";
+import { NgrxMediaQueriesFacade } from "@yoozly/ngrx-mediaqueries";
 constructor(
   private mqService: NgrxMediaQueriesFacade
 ) {}
