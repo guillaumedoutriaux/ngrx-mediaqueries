@@ -5,6 +5,7 @@ import { updateAllMQ, updateOneMQ } from "../+store";
 import { NgrxMQModels } from "../models/mq.model";
 import { SETTINGS } from "./mq.tokens";
 import { ngrxMediaQueriesDefault } from "./mq.default";
+import { BrowserWindowRef } from "./windowref.service";
 
 @Injectable({ providedIn: "root" })
 export class MediaQueriesService {
@@ -12,6 +13,7 @@ export class MediaQueriesService {
 
   constructor(
     private store: Store<any>,
+    private wr: BrowserWindowRef,
     @Optional() @Inject(SETTINGS) private list: NgrxMQModels.List
   ) {
     this.mqList = this.list ? this.list : ngrxMediaQueriesDefault;
@@ -36,12 +38,18 @@ export class MediaQueriesService {
   }
 
   private initializeListeners() {
-    Object.entries(this.mqList).forEach(([key, value]) => {
-      const mediaQuery: MediaQueryList = window.matchMedia(`${value}`);
-      mediaQuery.addListener(mq =>
-        this.store.dispatch(updateOneMQ({ id: key, status: mq.matches }))
-      );
-      this.store.dispatch(updateOneMQ({ id: key, status: mediaQuery.matches }));
-    });
+    if (this.wr.nativeWindow) {
+      Object.entries(this.mqList).forEach(([key, value]) => {
+        const mediaQuery: MediaQueryList = this.wr.nativeWindow.matchMedia(
+          `${value}`
+        );
+        mediaQuery.addListener(mq =>
+          this.store.dispatch(updateOneMQ({ id: key, status: mq.matches }))
+        );
+        this.store.dispatch(
+          updateOneMQ({ id: key, status: mediaQuery.matches })
+        );
+      });
+    }
   }
 }
