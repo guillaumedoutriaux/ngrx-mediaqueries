@@ -1,6 +1,6 @@
 {
   "name": "@yoozly/ngrx-mediaqueries",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "author": "Guillaume Doutriaux",
   "description": "Angular Lib that binds CSS media queries and @ngrx/store together.",
   "homepage": "https://github.com/guillaumedoutriaux/ngrx-mediaqueries",
